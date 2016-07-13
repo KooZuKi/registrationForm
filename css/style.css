@@ -1,0 +1,57 @@
+body {
+	background: url('../img/lake.jpg');
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+.container {
+	margin-top: 8%;
+}
+
+form {
+	text-align: center;
+	margin:20px;
+}
+label {
+	font-size: 15px;
+	color: tomato;
+	text-transform: uppercase;
+}
+.center {
+	text-align: center;
+}
+.error {
+	color:#ffffff;
+	font-size: 18px;
+	background-color: rgba(255, 99, 71, 0.48);
+	background
+}
+input .error {
+	border: 1px solid #a10;
+
+}
+.success {
+	color: #3c763d;
+	position: relative;
+    top: -28px;
+    right: -250px;
+}
+.btn {
+	padding: 6px;
+	margin-top: 12px;
+	font-size: 20px;
+}
+/*.fa-user {
+	position: relative;
+    top: 28px;
+    right: 259px;
+}*/
+/*.fa-key {
+    position: relative;
+    right: 259px;
+    top: 27px;
+}*/
+/*.confirmpw {
+    position: relative;
+    right: 259px;
+    top: 27px;
+}*/

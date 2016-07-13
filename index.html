@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="lib/bootstrap.min.css">
+    <link rel="stylesheet" href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+</head>
+<!-- <body ng-app="myApp" ng-controller="SignUpController"> -->
+ 
+<body ng-app="myApp" ng-controller="SignUpController">
+    
+<div class="container">
+    <div class="col-md-6 col-md-offset-3"> 
+        <h2 class="center">Register</h2>   
+        <form name="signUpForm" ng-submit="submitForm()">
+            <div class="form-group" ng-class="{'has-success': signUpForm.username.$valid}">
+                
+                <div class="input-group"><span class="input-group-addon"><i class="fa fa-user fa-lg" aria-hidden="true"></i></span> <input class="form-control" placeholder="User Name" type="text" name="username" ng-model="userdata.username" required ng-minlength="4" ng-maxlength="8"></div>
+                <span class="fa fa-check success" aria-hidden="true" ng-if="signUpForm.username.$valid"></span>
+                    <p class="error" ng-if="signUpForm.username.$error.required && signUpForm.username.$touched">Uername cannot be blank</p>
+            
+                    <p class="error" ng-if="(signUpForm.username.$error.minlength || signUpForm.username.$error.maxlength) && signUpForm.username.$touched">Uername should between 4 - 8 </p>
+            </div>
+
+            <div class="form-group" ng-class="{'has-success': signUpForm.password.$valid }">
+                <div class="input-group"><span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+                <input class="form-control" placeholder="Password" type="password" name="password" ng-model="userdata.password" required ng-minlength="6" ng-maxlength="12"></div>
+                    <span class="fa fa-check success" aria-hidden="true" ng-if="signUpForm.password.$valid"></span>
+                    <p class="error" ng-if="signUpForm.password.$error.required && signUpForm.password.$touched">Please enter your password</p>
+                    <p class="error" ng-if="(signUpForm.password.$error.minlength || signUPForm.password.$error.maxlength) && signUpForm.password.$touched">Password must between 6 - 12</p>
+            </div>
+
+            <div class="form-group" ng-class="{'has-success': signUpForm.confirm.$valid}">
+                <div class="input-group"><span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+                <input class="form-control" placeholder="Password Confirm" type="password" name="confirm" ng-model="userdata.confirm" required ng-minlength="6" ng-maxlength="12" compare="userdata.password"></div>
+                <!-- <p ng-if="signUpForm.confirm.$error.reqired && signUpForm.confirm.$touched">Password is not the same</p> -->
+                <span class="fa fa-check success" aria-hidden="true" ng-if="signUpForm.confirm.$valid"></span>
+                <p class="error" ng-show="((userdata.password != userdata.confirm) || signUpForm.confirm.$invalid) && signUpForm.confirm.$touched">Password is not the same</p>
+                <br>    
+                <div class="btn"><button class="btn btn-primary">Sign Up</button></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+<script src="lib/angular.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
